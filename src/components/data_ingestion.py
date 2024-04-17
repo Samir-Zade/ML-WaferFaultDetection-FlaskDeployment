@@ -32,7 +32,7 @@ class DataIngestion: #creation of config object where we get above path of csv f
 
         try:
             df: pd.DataFrame = export_collection_as_dataframe(
-                db_name=MONGO_DATABASE_NAME, collection_name=MONGO_COLLECTION_NAME
+                db_name=DATABASE_NAME, collection_name=COLLECTION_NAME
             )
 
             logging.info("Exported collection as dataframe")

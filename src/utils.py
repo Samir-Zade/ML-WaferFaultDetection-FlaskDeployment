@@ -17,7 +17,11 @@ from src.exception import CustomException
 #mongodb to csv dataframe
 def export_collection_as_dataframe(collection_name, db_name):
     try:
-        mongo_client = MongoClient(os.getenv("MONGO_DB_URL"))
+
+        #uri - uniform resource indentifier
+        uri = "mongodb+srv://samirzadeofficial:Samirzadeofficial@waferfaultdetection.xjzrw1s.mongodb.net/?retryWrites=true&w=majority&appName=WaferFaultDetection"
+
+        mongo_client = MongoClient(uri)
 
         collection = mongo_client[db_name][collection_name]
 

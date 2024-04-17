@@ -86,7 +86,6 @@ class PredictionPipeline:
             Version     :   1.2
             Revisions   :   moved setup to cloud
         """
-   
         try:
 
             prediction_column_name : str = "class"
