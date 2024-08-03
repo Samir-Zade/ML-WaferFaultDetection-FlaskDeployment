@@ -24,3 +24,20 @@ json_record = list(json.loads(df.T.to_json()).values())
 
 #now dump the data into database
 client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+
+
+
+
+from pymongo.mongo_client import MongoClient
+
+uri = "mongodb+srv://samirzadeofficial:<password>@freestorage.5rrd1zd.mongodb.net/?retryWrites=true&w=majority&appName=FreeStorage"
+
+# Create a new client and connect to the server
+client = MongoClient(uri)
+
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)

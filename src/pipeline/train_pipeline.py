@@ -5,14 +5,7 @@ from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
 from src.exception import CustomException
 
-
-
-
-
-
 class TraininingPipeline:
-
-    
     def start_data_ingestion(self):
         try:
             data_ingestion = DataIngestion()
@@ -22,10 +15,6 @@ class TraininingPipeline:
         except Exception as e:
             raise CustomException(e,sys)
         
-
-
-        
-    
     def start_data_transformation(self, feature_store_file_path):
         try:
             data_transformation = DataTransformation(feature_store_file_path= feature_store_file_path)
